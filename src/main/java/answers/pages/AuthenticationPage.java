@@ -44,7 +44,8 @@ public class AuthenticationPage extends AbstractPage<AuthenticationPage> {
 		Assertions.assertThat(driver.getTitle()).startsWith("Login");
 	}
 
-	public MyAccountPage loginWith(final String email, final String password) {
+	public MyAccountPage loginWith
+			(final String email, final String password) {
 		emailTextfield.sendKeys(email);
 		passwordTextfield.sendKeys(password);
 		loginButton.click();

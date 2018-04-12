@@ -3,7 +3,7 @@ package browser.structured.answers;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import utils.listeners.webdriver.DisplayUtil;
+import utils.webdriver.DisplayUtil;
 
 @Test
 public class FormAddDiv extends AbstractTestBase {

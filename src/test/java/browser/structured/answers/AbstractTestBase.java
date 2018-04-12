@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import utils.listeners.TestListener;
-import utils.listeners.webdriver.BrowserProvider;
+import utils.webdriver.BrowserProvider;
 
 import java.net.MalformedURLException;
 

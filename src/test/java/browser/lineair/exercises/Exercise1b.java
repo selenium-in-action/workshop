@@ -21,6 +21,14 @@ public class Exercise1b extends AbstractTestBase {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 
+		driver.findElement(By.id("email")).sendKeys("test" + rand + "@test.nl");
+		driver.findElement(By.id("email")).sendKeys("test".concat(rand).concat("@test.nl"));
+
+		String title = driver.findElement(By.tagName("h1")).getText();
+		System.out.println(title);
+
+		Assertions.assertThat(title).isEqualTo("Create an account");
+
 		Assertions.assertThat(driver.findElement(By.cssSelector("div#center_column > p")).getText()).isEqualTo("Your account has been created.");
 	}
 }

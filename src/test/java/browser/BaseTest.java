@@ -8,8 +8,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import utils.listeners.TestListener;
-import utils.listeners.webdriver.Browser;
-import utils.listeners.webdriver.BrowserProvider;
+import utils.webdriver.Browser;
+import utils.webdriver.BrowserProvider;
 
 import java.net.MalformedURLException;
 
@@ -34,7 +34,7 @@ public class BaseTest {
 //        driver = new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capability);
 
 //        driver = new FirefoxDriver();
-            driver = BrowserProvider.createDriver(Browser.CHROME);
+        driver = BrowserProvider.createDriver(Browser.CHROME);
         driver.get("http://www.google.com");
     }
 

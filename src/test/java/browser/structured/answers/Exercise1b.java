@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * The goal of this exercises is to fix the broken test(s).
  */
-@Test
+@Test(groups = {"regressie", "smoketest"})
 public class Exercise1b extends AbstractTestBase {
 
     public void registerNewAccount() {

@@ -87,7 +87,7 @@
                         <seleniumBrowser>${seleniumBrowser}</seleniumBrowser>
                     </systemPropertyVariables>
                     <includes>
-                        <include>/browser/structured/answers/FormAdd**</include>
+                        <include>/browser/structured/answers/**</include>
                     </includes>
                     <parallel>classes</parallel>
                     <threadCount>4</threadCount>

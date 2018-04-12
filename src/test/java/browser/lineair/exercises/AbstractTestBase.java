@@ -28,7 +28,7 @@ public abstract class AbstractTestBase {
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         // Close the browser
-//		driver.quit();
+		driver.quit();
     }
 
 }
