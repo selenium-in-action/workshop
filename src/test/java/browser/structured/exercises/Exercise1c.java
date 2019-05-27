@@ -1,6 +1,7 @@
 package browser.structured.exercises;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +23,7 @@ public class Exercise1c {
 
 	@BeforeSuite
 	public void setupDriverManager() {
-		ChromeDriverManager.getInstance().setup();
+		WebDriverManager.chromedriver().setup();
 	}
 
 	@BeforeMethod(alwaysRun = true)

@@ -4,6 +4,7 @@ import exercises.pages.HomePage;
 import exercises.pages.MyAccountPage;
 import exercises.types.Title;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +26,7 @@ public class Exercise1b {
 
 	@BeforeSuite
 	public void setupDriverManager() {
-		ChromeDriverManager.getInstance().setup();
+		WebDriverManager.chromedriver().setup();
 	}
 
 	@BeforeMethod(alwaysRun = true)

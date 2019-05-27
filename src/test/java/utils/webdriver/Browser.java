@@ -2,6 +2,7 @@ package utils.webdriver;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,14 +13,14 @@ public enum Browser {
     FIREFOX {
         @Override
         public WebDriver initialize() {
-            FirefoxDriverManager.getInstance().setup();
+            WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
         }
     },
     CHROME {
         @Override
         public WebDriver initialize() {
-            ChromeDriverManager.getInstance().setup();
+            WebDriverManager.chromedriver().setup();
             final ChromeOptions chromeOptions = new ChromeOptions();
 //            chromeOptions.addArguments("--start-fullscreen");
             return new ChromeDriver(chromeOptions);
@@ -28,7 +29,7 @@ public enum Browser {
     CHROME_HEADLESS {
         @Override
         public WebDriver initialize() {
-            ChromeDriverManager.getInstance().setup();
+            WebDriverManager.edgedriver().setup();
             final ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--headless");
             chromeOptions.addArguments("--disable-gpu");

@@ -3,7 +3,8 @@ package answers.exercise5.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.SlowLoadableComponent;
-import org.openqa.selenium.support.ui.SystemClock;
+
+import java.time.Clock;
 
 public abstract class AbstractPage<T extends SlowLoadableComponent<T>> extends SlowLoadableComponent<T> {
 
@@ -15,7 +16,7 @@ public abstract class AbstractPage<T extends SlowLoadableComponent<T>> extends S
 	}
 
 	public AbstractPage(final WebDriver driver, final int loadTimeout) {
-		super(new SystemClock(), loadTimeout);
+		super(Clock.systemDefaultZone(), loadTimeout);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

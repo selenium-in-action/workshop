@@ -1,6 +1,7 @@
 package browser.lineair.exercises;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -13,7 +14,7 @@ public abstract class AbstractTestBase {
 
     @BeforeSuite
     public void setupDriverManager() {
-        ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
 //		OperaDriverManager.getInstance().version("2.27").forceDownload().setup();
     }
 

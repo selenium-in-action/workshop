@@ -3,6 +3,7 @@ package browser.structured.exercises;
 import exercises.pages.HomePage;
 import exercises.pages.SearchResultsPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,7 @@ public class DataDrivenSearchTest {
 
 	@BeforeSuite
 	public void setupDriverManager() {
-		ChromeDriverManager.getInstance().setup();
+		WebDriverManager.chromedriver().setup();
 //		OperaDriverManager.getInstance().version("2.27").forceDownload().setup();
 	}
 

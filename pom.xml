@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <webdrivermanager.version>2.2.5</webdrivermanager.version>
-        <selenium-java.version>3.14.0</selenium-java.version>
+        <webdrivermanager.version>3.6.0</webdrivermanager.version>
+        <selenium-java.version>4.0.0-alpha-1</selenium-java.version>
         <testng.version>6.14.3</testng.version>
         <awaitility.version>3.1.2</awaitility.version>
         <logback-classic.version>1.2.3</logback-classic.version>
