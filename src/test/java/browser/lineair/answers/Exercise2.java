@@ -19,8 +19,8 @@ public class Exercise2 extends AbstractTestBase {
         getDriver().get("http://demo.seleniuminaction.com/index.php");
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        getDriver().findElement(By.cssSelector("input#search_query_top")).sendKeys("shirt");
-        getDriver().findElement(By.cssSelector("button[name='submit_search']")).click();
+        getDriver().findElement(By.name("s")).sendKeys("mug");
+        getDriver().findElement(By.cssSelector("#search_widget button")).click();
 
         // Java 7
         // final List<String> productNamedriver.findElement(By.id("email")).sendKeys("test" + rand + "@test.nl");s = new ArrayList<>();
@@ -30,9 +30,9 @@ public class Exercise2 extends AbstractTestBase {
         // }
 
         // Java 8
-        final List<String> productNames = getDriver().findElements(By.cssSelector("ul.product_list a.product-name")).stream().map(WebElement::getText)
+        final List<String> productNames = getDriver().findElements(By.cssSelector(".product-title")).stream().map(WebElement::getText)
                 .collect(Collectors.toList());
 
-        Assertions.assertThat(productNames).contains("Faded Short Sleeves T-shirt");
+        Assertions.assertThat(productNames).contains("Mug The Adventure Begins");
     }
 }

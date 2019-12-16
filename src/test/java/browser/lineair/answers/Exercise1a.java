@@ -14,23 +14,25 @@ public class Exercise1a extends AbstractTestBase {
     public void loginSuccess() {
         getDriver().get("http://demo.seleniuminaction.com");
 
-        getDriver().findElement(By.cssSelector("input#email")).sendKeys("tester@test.com");
-        getDriver().findElement(By.cssSelector("input#passwd")).sendKeys("1qazxsw2");
-        getDriver().findElement(By.cssSelector("button#SubmitLogin")).click();
+        getDriver().findElement(By.cssSelector(".user-info a")).click();
 
-        Assertions.assertThat(getDriver().findElement(By.cssSelector("div#center_column > p")).getText())
-                .isEqualTo("Welcome to your account. Here you can manage all of your personal information and orders.");
+        getDriver().findElement(By.name("email")).sendKeys("tester@test.com");
+        getDriver().findElement(By.name("password")).sendKeys("1qazxsw2");
+        getDriver().findElement(By.id("submit-login")).click();
+
+        Assertions.assertThat(getDriver().findElement(By.cssSelector(".logout")).isDisplayed())
+                .isEqualTo(true);
     }
 
     public void loginAccountDoesNotExist() {
 
         getDriver().get("http://demo.seleniuminaction.com");
 
-        getDriver().findElement(By.cssSelector("a.login")).click();
+        getDriver().findElement(By.cssSelector(".user-info a")).click();
 
-        getDriver().findElement(By.cssSelector("input#email")).sendKeys("1234@test.com");
-        getDriver().findElement(By.cssSelector("input#passwd")).sendKeys("1qazxsw2");
-        getDriver().findElement(By.cssSelector("button#SubmitLogin")).click();
+        getDriver().findElement(By.name("email")).sendKeys("1234@test.com");
+        getDriver().findElement(By.name("password")).sendKeys("1qazxsw2");
+        getDriver().findElement(By.id("submit-login")).click();
 
         Assertions.assertThat(getDriver().findElement(By.cssSelector(".alert-danger")).isDisplayed()).isEqualTo(true);
     }

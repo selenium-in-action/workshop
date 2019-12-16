@@ -15,10 +15,10 @@ public class Exercise3 extends AbstractTestBase {
 
         getDriver().findElement(By.cssSelector("#contact-link > a")).click();
 
-        Assertions.assertThat(getDriver().findElement(By.cssSelector("h1.page-heading")).getText()).isEqualTo("CUSTOMER SERVICE - CONTACT US");
+        Assertions.assertThat(getDriver().findElement(By.cssSelector("form h3")).getText()).isEqualTo("CONTACT US");
 
         // or
-        Assertions.assertThat(getDriver().getTitle()).isEqualTo("Contact us - FashionShop");
+        Assertions.assertThat(getDriver().getTitle()).isEqualTo("Contact us");
 
     }
 }

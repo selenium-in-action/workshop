@@ -8,7 +8,6 @@ public class OpenWebsite {
 
     @Test
     public void openSite() {
-        System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver");
         WebDriver driver = new FirefoxDriver();
 
 //        driver.manage().window().maximize();

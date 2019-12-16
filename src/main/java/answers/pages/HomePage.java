@@ -3,12 +3,16 @@ package answers.pages;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends AbstractPage<HomePage> {
 
 	@FindBy(css = "a.login")
 	private WebElement loginLink;
+
+	// WebElement loginLink = driver.findElement(By.cssSelector("a.login"))
+
 
 	@FindBy(css = "#contact-link > a")
 	private WebElement contactLink;
@@ -45,6 +49,12 @@ public class HomePage extends AbstractPage<HomePage> {
 		return new ContactPage(driver);
 	}
 
+	/**
+	 * Zoekmethode
+	 *
+	 * @param query
+	 * @return
+	 */
 	public SearchResultsPage searchFor(final String query) {
 		searchTextfield.sendKeys(query);
 		searchButton.click();

@@ -14,13 +14,12 @@ import org.testng.annotations.Test;
 public class Exercise1a extends AbstractTestBase {
 
     public void loginSuccess() {
-        final MyAccountPage accountPage = new HomePage(getDriver()) //
-                .get() //
-                .clickOnLogin() //
-                .loginWith("tester@test.com", "1qazxsw2");
+        new HomePage(getDriver()).get().searchFor("").getProductNames();
 
+        /*
         Assertions.assertThat(accountPage.getWelcomeMessage())
                 .isEqualTo("Welcome to your account. Here you can manage all of your personal information and orders.");
+                */
     }
 
     public void loginAccountDoesNotExist() {

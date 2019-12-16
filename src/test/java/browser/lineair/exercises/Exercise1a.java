@@ -15,14 +15,14 @@ public class Exercise1a extends AbstractTestBase {
 	public void loginSuccess() {
 		driver.get("http://demo.seleniuminaction.com/index.php");
 
-		driver.findElement(By.cssSelector("a.login")).click();
+		driver.findElement(By.cssSelector("user-info a")).click();
 
-		driver.findElement(By.cssSelector("input#email")).sendKeys("tester@test.com");
-		driver.findElement(By.name("passwd")).sendKeys("1qazxsw2");
-		driver.findElement(By.id("SubmitLogin")).click();
+		driver.findElement(By.name("email")).sendKeys("tester@test.com");
+		driver.findElement(By.name("password")).sendKeys("1qazxsw2");
+		driver.findElement(By.id("submit-login")).click();
 
-		Assertions.assertThat(driver.findElement(By.cssSelector("p.info-account")).getText())
-				.isEqualTo("Welcome to your account. Here you can manage all of your personal information and orders.");
+		Assertions.assertThat(driver.findElement(By.cssSelector(".logout")).isDisplayed())
+				.isEqualTo(true);
 	}
 
 	public void loginAccountDoesNotExist() {

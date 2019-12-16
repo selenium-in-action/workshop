@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AccountCreationPage extends AbstractPage<AccountCreationPage> {
+public class AccountCreationPage extends AbstractPage {
 
 	@FindBy(css = "input#id_gender1")
 	private WebElement maleRadio;

@@ -12,11 +12,7 @@ public class Exercise4 extends AbstractTestBase {
     public void requestNewPasswordExistingUser_SuccessMessageShown() {
         driver.get("http://demo.seleniuminaction.com");
 
-//        Assertions.assertThat(messages).contains("A confirmation email has been sent to your address: -1137205466tetser@test.com");
+//        Assertions.assertThat(messages).contains("If this email address has been registered in our shop, you will receive a link to reset your password at test@test.nl.");
     }
 
-    public void requestNewPasswordNonExistingUser_SuccessMessageShown() {
-
-        // Assertions.assertThat(messages).contains("There is 1 error\nThere is no account registered for this email address.");
-    }
 }

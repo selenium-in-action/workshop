@@ -18,35 +18,22 @@ public class Exercise4 extends AbstractTestBase {
     public void requestNewPasswordExistingUser_SuccessMessageShown() {
         getDriver().get("http://demo.seleniuminaction.com/index.php");
 
-        getDriver().findElement(By.cssSelector("a.login")).click();
-        getDriver().findElement(By.cssSelector(".lost_password a")).click();
+        getDriver().findElement(By.cssSelector(".user-info a")).click();
+        getDriver().findElement(By.cssSelector(".forgot-password a")).click();
 
-        getDriver().findElement(By.cssSelector("#email")).sendKeys("-1137205466tetser@test.com");
-        getDriver().findElement(By.xpath("//button/span[text() = 'Retrieve Password']")).click();
+        getDriver().findElement(By.name("email")).sendKeys("-1137205466tetser@test.com");
+        getDriver().findElement(By.cssSelector("form.forgotten-password button")).click();
 
         // List van WebElementen uitlezen
-//        final List<WebElement> errorMessages = getDriver().findElements(By.cssSelector(".alert"));
+//        final List<WebElement> errorMessages = getDriver().findElements(By.cssSelector(".ps-alert-success p"));
 //        final List<String> errorList = new ArrayList<String>();
 //        for (WebElement el : errorMessages) {
 //            errorList.add(el.getText());
 //        }
 
-        final List<String> messages = getDriver().findElements(By.cssSelector(".alert")).stream().map(WebElement::getText).collect(Collectors.toList());
+        final List<String> messages = getDriver().findElements(By.cssSelector(".ps-alert-success p")).stream().map(WebElement::getText).collect(Collectors.toList());
 
-        Assertions.assertThat(messages).contains("A confirmation email has been sent to your address: -1137205466tetser@test.com");
+        Assertions.assertThat(messages).contains("If this email address has been registered in our shop, you will receive a link to reset your password at -1137205466tetser@test.com.");
     }
 
-    public void requestNewPasswordNonExistingUser_SuccessMessageShown() {
-        getDriver().get("http://demo.seleniuminaction.com/index.php");
-
-        getDriver().findElement(By.cssSelector("a.login")).click();
-        getDriver().findElement(By.cssSelector(".lost_password a")).click();
-
-        getDriver().findElement(By.cssSelector("#email")).sendKeys("Test@test.com");
-        getDriver().findElement(By.xpath("//button/span[text() = 'Retrieve Password']")).click();
-
-        final List<String> messages = getDriver().findElements(By.cssSelector(".alert")).stream().map(WebElement::getText).collect(Collectors.toList());
-
-        Assertions.assertThat(messages).contains("There is 1 error\nThere is no account registered for this email address.");
-    }
 }

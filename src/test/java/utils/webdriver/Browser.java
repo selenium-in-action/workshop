@@ -22,7 +22,7 @@ public enum Browser {
         public WebDriver initialize() {
             WebDriverManager.chromedriver().setup();
             final ChromeOptions chromeOptions = new ChromeOptions();
-//            chromeOptions.addArguments("--start-fullscreen");
+            chromeOptions.addArguments("--start-fullscreen");
             return new ChromeDriver(chromeOptions);
         }
     },

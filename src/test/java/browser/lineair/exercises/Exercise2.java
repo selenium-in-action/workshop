@@ -27,12 +27,12 @@ public class Exercise2 extends AbstractTestBase {
         // }
 
         // Java 8
-        final List<String> productNames = driver.findElements(By.cssSelector("ul.product_list a.product-name")).stream().map(WebElement::getText)
+        final List<String> productNames = driver.findElements(By.cssSelector(".product-title")).stream().map(WebElement::getText)
                 .collect(Collectors.toList());
 
         System.out.println(productNames.toString());
 
-        Assertions.assertThat(productNames).contains("Faded Short Sleeves T-shirt");
+        Assertions.assertThat(productNames).contains("Mug The Adventure Begins");
 
     }
 }

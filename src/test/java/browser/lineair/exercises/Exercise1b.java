@@ -21,14 +21,24 @@ public class Exercise1b extends AbstractTestBase {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 
-		driver.findElement(By.id("email")).sendKeys("test" + rand + "@test.nl");
-		driver.findElement(By.id("email")).sendKeys("test".concat(rand).concat("@test.nl"));
+		// click op link
+		driver.findElement(By.cssSelector(".user-info a")).click();
 
+
+
+		driver.findElement(By.id("email")).sendKeys("test" + rand + "@test.nl");
+		// driver.findElement(By.name("email")).sendKeys("test".concat(rand).concat("@test.nl"));
+
+		// h1 is niet goed
 		String title = driver.findElement(By.tagName("h1")).getText();
 		System.out.println(title);
 
+		driver.findElement(By.cssSelector("button[data-link-action='save-customer']")).click();
+
+
 		Assertions.assertThat(title).isEqualTo("Create an account");
 
-		Assertions.assertThat(driver.findElement(By.cssSelector("div#center_column > p")).getText()).isEqualTo("Your account has been created.");
+		Assertions.assertThat(driver.findElement(By.cssSelector(".logout")).isDisplayed())
+				.isEqualTo(true);
 	}
 }
