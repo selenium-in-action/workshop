@@ -1,4 +1,4 @@
-# Selectie van testcases
+# Selecteren van testcases
 
 Testclasses moeten standaard eindigen op `Test`, anders moet je specifiek aangeven (in pom.xml) welke test je wilt uitvoeren. 
 ````

@@ -2,7 +2,6 @@ package browser.structured.exercises;
 
 import exercises.pages.ContactPage;
 import exercises.pages.HomePage;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

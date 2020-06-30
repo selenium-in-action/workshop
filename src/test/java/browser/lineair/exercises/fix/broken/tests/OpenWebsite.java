@@ -1,4 +1,4 @@
-package browser.lineair.exercises;
+package browser.lineair.exercises.fix.broken.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;

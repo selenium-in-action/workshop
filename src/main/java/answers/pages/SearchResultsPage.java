@@ -1,8 +1,8 @@
 package answers.pages;
 
 import answers.types.SearchResult;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class SearchResultsPage extends AbstractPage<SearchResultsPage> {
 
-	private Log log = LogFactory.getLog(SearchResultsPage.class);
+	private static Logger log = LogManager.getLogger(SearchResultsPage.class);
 
 	@FindBy(css = "ul.product_list a.product-name")
 	private List<WebElement> productNames;

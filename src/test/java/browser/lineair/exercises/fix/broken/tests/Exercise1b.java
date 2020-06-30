@@ -1,4 +1,4 @@
-package browser.lineair.exercises;
+package browser.lineair.exercises.fix.broken.tests;
 
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
@@ -20,11 +20,8 @@ public class Exercise1b extends AbstractTestBase {
 		driver.get("http://demo.seleniuminaction.com");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-
 		// click op link
-		driver.findElement(By.cssSelector(".user-info a")).click();
-
-
+		driver.findElement(By.cssSelector(".login")).click();
 
 		driver.findElement(By.id("email")).sendKeys("test" + rand + "@test.nl");
 		// driver.findElement(By.name("email")).sendKeys("test".concat(rand).concat("@test.nl"));

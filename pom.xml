@@ -9,17 +9,16 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <webdrivermanager.version>3.6.0</webdrivermanager.version>
-        <selenium-java.version>4.0.0-alpha-1</selenium-java.version>
+        <webdrivermanager.version>4.0.0</webdrivermanager.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
         <testng.version>6.14.3</testng.version>
-        <awaitility.version>3.1.2</awaitility.version>
-        <logback-classic.version>1.2.3</logback-classic.version>
-        <allure-testng.version>2.7.0</allure-testng.version>
+        <allure-testng.version>2.13.3</allure-testng.version>
+        <log4j.version>2.13.2</log4j.version>
 
         <aspectj.version>1.8.13</aspectj.version>
         <lombok.version>1.18.2</lombok.version>
-        <assertj-core.version>3.11.1</assertj-core.version>
-        <ngwebdriver.version>1.1.4</ngwebdriver.version>
+        <assertj-core.version>3.16.1</assertj-core.version>
+        <ngwebdriver.version>1.1.6</ngwebdriver.version>
 
         <seleniumGridUrl>http://192.168.99.100:4444/wd/hub</seleniumGridUrl>
     </properties>
@@ -44,15 +43,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback-classic.version}</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.awaitility</groupId>
-            <artifactId>awaitility</artifactId>
-            <version>${awaitility.version}</version>
-            <scope>test</scope>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -95,7 +93,7 @@
                         <seleniumBrowser>${seleniumBrowser}</seleniumBrowser>
                     </systemPropertyVariables>
                     <includes>
-                        <include>/browser/lineair/exercises/**</include>
+                        <include>/browser/lineair/answers/**</include>
                     </includes>
                     <parallel>classes</parallel>
                     <threadCount>4</threadCount>

@@ -2,7 +2,6 @@ package browser.structured.exercises;
 
 import exercises.pages.ContactPage;
 import exercises.types.ContactSubject;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package browser.lineair.exercises;
+package browser.lineair.exercises.fix.broken.tests;
 
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
@@ -15,11 +15,11 @@ public class Exercise1a extends AbstractTestBase {
 	public void loginSuccess() {
 		driver.get("http://demo.seleniuminaction.com/index.php");
 
-		driver.findElement(By.cssSelector("user-info a")).click();
+		driver.findElement(By.cssSelector(".login")).click();
 
-		driver.findElement(By.name("email")).sendKeys("tester@test.com");
-		driver.findElement(By.name("password")).sendKeys("1qazxsw2");
-		driver.findElement(By.id("submit-login")).click();
+		driver.findElement(By.id("email")).sendKeys("tester@test.com");
+		driver.findElement(By.id("passwd")).sendKeys("1qazxsw2");
+		driver.findElement(By.name("SubmitLogin")).click();
 
 		Assertions.assertThat(driver.findElement(By.cssSelector(".logout")).isDisplayed())
 				.isEqualTo(true);
