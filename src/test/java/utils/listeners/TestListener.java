@@ -1,5 +1,6 @@
 package utils.listeners;
 
+import browser.BaseTest;
 import browser.structured.answers.AbstractTestBase;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
