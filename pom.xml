@@ -93,10 +93,10 @@
                         <seleniumBrowser>${seleniumBrowser}</seleniumBrowser>
                     </systemPropertyVariables>
                     <includes>
-                        <include>/browser/lineair/answers/**</include>
+                        <include>/browser/structured/answers/**</include>
                     </includes>
                     <parallel>classes</parallel>
-                    <threadCount>4</threadCount>
+                    <threadCount>2</threadCount>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
