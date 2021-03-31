@@ -40,6 +40,7 @@ public class Exercise1c {
 	public void waitForCountDown() {
 		// Open website
 		driver.get("https://stuntcoders.com/snippets/javascript-countdown/");
+		driver.navigate().to("");
 
 		WebElement countdown = driver.findElement(By.id("javascript_countdown_time"));
 

@@ -36,7 +36,7 @@ public class HomePage extends AbstractPage<HomePage> {
 	@Override
 	protected void isLoaded() throws Error {
 		// verify if the correct page is open
-		Assertions.assertThat("FashionShop").isEqualTo(driver.getTitle());
+		Assertions.assertThat("My e-commerce").isEqualTo(driver.getTitle());
 	}
 
 	public AuthenticationPage clickOnLogin() {
