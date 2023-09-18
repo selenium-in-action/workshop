@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class Exercise5 extends AbstractTestBase {
 
 	public void completeContactForm_confirmationShown() {
-		driver.get("http://demo.seleniuminaction.com/contact-us");
+		driver.get("https://practicesoftwaretesting.com");
 
 	}
 

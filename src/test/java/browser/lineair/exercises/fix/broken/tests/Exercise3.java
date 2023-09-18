@@ -13,9 +13,9 @@ public class Exercise3 extends AbstractTestBase {
 
 	public void navigateToContactPage_contactPageShown() {
 		// Navigeer naar website
-		driver.get("http://demo.seleniuminaction.com");
+		driver.get("https://practicesoftwaretesting.com");
 
- 		WebElement el = driver.findElement(By.cssSelector("#contact-link > a"));
+ 		WebElement el = driver.findElement(By.cssSelector("[data-test='nav-contact']"));
 
 
 	}

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class Exercise3 extends AbstractTestBase {
 
     public void navigateToContactPage_contactPageShown() {
-        getDriver().get("http://demo.seleniuminaction.com/index.php");
+        getDriver().get("https://practicesoftwaretesting.com");
 
         getDriver().findElement(By.cssSelector("#contact-link > a")).click();
 

@@ -21,7 +21,7 @@ public class DataDrivenSearchTest extends AbstractTestBase {
 
     @Test(dataProvider = "data")
     public void searchSuccess(final String query) {
-        final SearchResultsPage searchResultsPage = new HomePage(getDriver()).get() //
+        final SearchResultsPage searchResultsPage = new HomePage(getDriver()).open() //
                 .searchFor(query);
 
         Assertions.assertThat(searchResultsPage.getResults().size()).isGreaterThan(0);

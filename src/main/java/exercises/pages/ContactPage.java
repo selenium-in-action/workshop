@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class ContactPage extends AbstractPage<ContactPage> {
+public class ContactPage extends AbstractPage {
 
 	@FindBy(css = ".contact-form-box")
 	private List<WebElement> contactForm;
@@ -42,15 +42,9 @@ public class ContactPage extends AbstractPage<ContactPage> {
 		super(driver);
 	}
 
-	@Override
-	protected void isLoaded() throws Error {
-		final String url = driver.getCurrentUrl();
-		Assertions.assertThat(!contactForm.isEmpty()).as("Not on the contact entry page: " + url).isEqualTo(true);
-	}
-
-	@Override
-	protected void load() {
-		driver.get("http://demo.rdekleijn.nl/index.php?controller=contact");
+	public ContactPage open() {
+		driver.get("https://practicesoftwaretesting.com");
+		return this;
 	}
 
 	public ContactPage completeForm(final ContactSubject subject, final String email, final String orderReference, final String message) {

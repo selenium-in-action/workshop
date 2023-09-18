@@ -9,9 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <webdrivermanager.version>4.0.0</webdrivermanager.version>
-        <selenium-java.version>3.141.59</selenium-java.version>
-        <testng.version>6.14.3</testng.version>
+        <selenium-java.version>4.12.1</selenium-java.version>
+        <testng.version>7.3.0</testng.version>
         <allure-testng.version>2.13.3</allure-testng.version>
         <log4j.version>2.13.2</log4j.version>
 
@@ -25,16 +24,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-        </dependency>
-
-        <!--dit is commentaar-->
-        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
         </dependency>
         <dependency>
             <groupId>com.paulhammant</groupId>

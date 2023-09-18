@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class Exercise5 extends AbstractTestBase {
 
 	public void completeContactForm_confirmationShown() {
-		getDriver().get("http://demo.seleniuminaction.com/index.php?controller=contact");
+		getDriver().get("https://practicesoftwaretesting.com");
 
 		new Select(getDriver().findElement(By.cssSelector("select#id_contact"))).selectByVisibleText("Customer service");
 		getDriver().findElement(By.cssSelector("input#email")).sendKeys("email@test.com");
@@ -26,7 +26,7 @@ public class Exercise5 extends AbstractTestBase {
 	}
 
 	public void invalidEmailGiven_shouldShowErrorMessage() {
-		getDriver().get("http://demo.seleniuminaction.com/index.php?controller=contact");
+		getDriver().get("https://practicesoftwaretesting.com");
 
 		new Select(getDriver().findElement(By.cssSelector("select#id_contact"))).selectByVisibleText("Customer service");
 		getDriver().findElement(By.cssSelector("input#email")).sendKeys("email");

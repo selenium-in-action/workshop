@@ -3,7 +3,6 @@ package browser.structured.exercises;
 import exercises.pages.AuthenticationPage;
 import exercises.pages.HomePage;
 import exercises.pages.MyAccountPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,11 +20,6 @@ public class Exercise6 {
 
 	protected WebDriver driver;
 
-	@BeforeSuite
-	public void setupDriverManager() {
-		WebDriverManager.chromedriver().setup();
-	}
-
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		// Create a new instance of the Chrome driver
@@ -40,7 +34,7 @@ public class Exercise6 {
 
 	public void loginSuccess() {
 		final MyAccountPage accountPage = new HomePage(driver) //
-				.get() //
+				.open() //
 				.clickOnLogin() //
 				.loginWith("tester@test.com", "1qazxsw2");
 
@@ -51,7 +45,7 @@ public class Exercise6 {
 	public void loginAccountDoesNotExist() {
 
 		final AuthenticationPage authenticationPage = new HomePage(this.driver) //
-				.get() //
+				.open() //
 				.clickOnLogin();
 		authenticationPage.loginWith("1234@test.com", "1qazxsw2");
 

@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 public class Exercise4 extends AbstractTestBase {
 
 	public void requestNewPasswordExistingUser_SuccessMessageShown() {
-		final ForgotPasswordPage page = new HomePage(getDriver()).get() //
+		final ForgotPasswordPage page = new HomePage(getDriver()).open() //
 				.clickOnLogin() //
 				.clickOnForgotPassword() //
 				.requestNewPassword("-1137205466tetser@test.com");
@@ -24,7 +24,7 @@ public class Exercise4 extends AbstractTestBase {
 	}
 
 	public void requestNewPasswordNonExistingUser_SuccessMessageShown() {
-		final ForgotPasswordPage page = new HomePage(getDriver()).get() //
+		final ForgotPasswordPage page = new HomePage(getDriver()).open() //
 				.clickOnLogin() //
 				.clickOnForgotPassword() //
 				.requestNewPassword("Test@test.com");

@@ -20,7 +20,7 @@ public class Exercise7 extends AbstractTestBase {
 		details.setReference("order4321");
 		details.setMessage("The product arrived with damages.");
 
-		final ContactPage contactPage = new ContactPage(getDriver()).get() //
+		final ContactPage contactPage = new ContactPage(getDriver()).open() //
 				.completeForm(details.getSubject(), details.getEmail(), details.getReference(), details.getMessage());
 
 		Assertions.assertThat(contactPage.getSuccessMessage()).isEqualTo("Your message has been successfully sent to our team.");
@@ -33,7 +33,7 @@ public class Exercise7 extends AbstractTestBase {
 		details.setReference("order4321");
 		details.setMessage("The product arrived with damages.");
 
-		final ContactPage contactPage = new ContactPage(getDriver()).get() //
+		final ContactPage contactPage = new ContactPage(getDriver()).open() //
 				.completeForm(details.getSubject(), details.getEmail(), details.getReference(), details.getMessage());
 
 		Assertions.assertThat(contactPage.getErrorMessage()).isEqualTo("Invalid email address.");

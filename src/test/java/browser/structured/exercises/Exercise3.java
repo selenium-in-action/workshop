@@ -2,7 +2,6 @@ package browser.structured.exercises;
 
 import exercises.pages.ContactPage;
 import exercises.pages.HomePage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -20,11 +19,6 @@ public class Exercise3 {
 
 	protected WebDriver driver;
 
-	@BeforeSuite
-	public void setupDriverManager() {
-		WebDriverManager.chromedriver().setup();
-	}
-
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		// Create a new instance of the Chrome driver
@@ -38,7 +32,7 @@ public class Exercise3 {
 	}
 
 	public void navigateToContactPage_contactPageShown() {
-		final ContactPage contactPage = new HomePage(driver).get() //
+		final ContactPage contactPage = new HomePage(driver).open() //
 				.navigateToContactPage();
 
 		// ...

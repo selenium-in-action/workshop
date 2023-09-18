@@ -24,9 +24,8 @@ public class AssertExamples extends AbstractTestBase{
 
     public void assertString() {
 
-        driver.get("http://demo.seleniuminaction.com/index.php");
-        WebElement el = driver.findElement(By.className("login"));
-
+        driver.get("https://practicesoftwaretesting.com");
+        WebElement el = driver.findElement(By.cssSelector("[data-test='nav-sign-in']"));
 
         System.out.println(el.toString());
 
@@ -35,8 +34,8 @@ public class AssertExamples extends AbstractTestBase{
     }
 
     public void booleanAssert() {
-        driver.get("http://demo.seleniuminaction.com/index.php");
-        WebElement el = driver.findElement(By.className("login"));
+        driver.get("https://practicesoftwaretesting.com");
+        WebElement el = driver.findElement(By.cssSelector("[data-test='nav-sign-in']"));
 
         Assertions.assertThat(el.isDisplayed())
                 .as("Login button is zichtbaar")
@@ -45,8 +44,8 @@ public class AssertExamples extends AbstractTestBase{
 
 
     public void listAssert() {
-        driver.get("http://demo.seleniuminaction.com/index.php");
-        List<String> list = driver.findElements(By.className("product-title")).stream().map(WebElement::getText).collect(Collectors.toList());
+        driver.get("https://practicesoftwaretesting.com");
+        List<String> list = driver.findElements(By.cssSelector("[data-test='product-name']")).stream().map(WebElement::getText).collect(Collectors.toList());
 
 
         Assertions.assertThat(list).containsExactly("product 1", "product 2");

@@ -2,7 +2,6 @@ package browser.structured.exercises;
 
 import exercises.pages.HomePage;
 import exercises.pages.SearchResultsPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,12 +12,6 @@ public class DataDrivenSearchTest {
 
 	protected WebDriver driver;
 	// protected RemoteWebDriver driver;
-
-	@BeforeSuite
-	public void setupDriverManager() {
-		WebDriverManager.chromedriver().setup();
-//		OperaDriverManager.getInstance().version("2.27").forceDownload().setup();
-	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
@@ -46,7 +39,7 @@ public class DataDrivenSearchTest {
 
 	@Test(dataProvider = "data")
 	public void searchSuccess(final String query) {
-		final SearchResultsPage searchResultsPage = new HomePage(driver).get() //
+		final SearchResultsPage searchResultsPage = new HomePage(driver).open() //
 				.searchFor(query);
 
 		Assertions.assertThat(searchResultsPage.getResults().size()).isGreaterThan(0);

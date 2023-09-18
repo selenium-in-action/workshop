@@ -2,7 +2,6 @@ package browser.structured.exercises;
 
 import exercises.pages.HomePage;
 import exercises.pages.SearchResultsPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,11 +20,6 @@ public class Exercise2 {
 
 	protected WebDriver driver;
 
-	@BeforeSuite
-	public void setupDriverManager() {
-		WebDriverManager.chromedriver().setup();
-	}
-
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		// Create a new instance of the Chrome driver
@@ -39,7 +33,7 @@ public class Exercise2 {
 	}
 
 	public void submitSearch_shouldDisplayResult() {
-		new HomePage(driver).get().searchFor("shirt");
+		new HomePage(driver).open().searchFor("shirt");
 
 		Assertions.assertThat(new SearchResultsPage(driver).getProductNames()).contains("Faded Short Sleeves T-shirt");
 	}

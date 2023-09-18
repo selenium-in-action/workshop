@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AuthenticationPage extends AbstractPage<AuthenticationPage> {
+public class AuthenticationPage extends AbstractPage {
 
 	@FindBy(css = "input#email")
 	private WebElement emailTextfield;
@@ -30,18 +30,6 @@ public class AuthenticationPage extends AbstractPage<AuthenticationPage> {
 
 	public AuthenticationPage(final WebDriver driver) {
 		super(driver);
-	}
-
-	@Override
-	protected void load() {
-		// Open the page
-		driver.get("http://demo.seleniuminaction.com/index.php?controller=authentication");
-	}
-
-	@Override
-	protected void isLoaded() throws Error {
-		// verify if the correct page is open
-		Assertions.assertThat(driver.getTitle()).startsWith("Login");
 	}
 
 	public MyAccountPage loginWith

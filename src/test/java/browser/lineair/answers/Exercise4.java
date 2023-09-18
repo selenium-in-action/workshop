@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class Exercise4 extends AbstractTestBase {
 
     public void requestNewPasswordExistingUser_SuccessMessageShown() {
-        getDriver().get("http://demo.seleniuminaction.com/index.php");
+        getDriver().get("https://practicesoftwaretesting.com");
         getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         getDriver().findElement(By.cssSelector("a.login")).click();
@@ -34,7 +34,7 @@ public class Exercise4 extends AbstractTestBase {
     }
 
     public void requestNewPasswordNonExistingUser_ErrorMessageShown() {
-        getDriver().get("http://demo.seleniuminaction.com/index.php");
+        getDriver().get("https://www.practicesoftwaretesting.com");
 
         getDriver().findElement(By.cssSelector("a.login")).click();
         getDriver().findElement(By.cssSelector(".lost_password a")).click();

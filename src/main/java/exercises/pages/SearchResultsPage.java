@@ -12,7 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SearchResultsPage extends AbstractPage<SearchResultsPage> {
+public class SearchResultsPage extends AbstractPage {
 
     private static Logger log = LogManager.getLogger(SearchResultsPage.class);
 
@@ -24,16 +24,6 @@ public class SearchResultsPage extends AbstractPage<SearchResultsPage> {
 
     public SearchResultsPage(final WebDriver driver) {
         super(driver);
-    }
-
-    @Override
-    protected void load() {
-        log.info("Can't navigate to the resultspage directly");
-    }
-
-    @Override
-    protected void isLoaded() throws Error {
-        Assertions.assertThat(driver.findElements(By.cssSelector("body#search"))).isNotEmpty();
     }
 
     public List<String> getProductNames() {

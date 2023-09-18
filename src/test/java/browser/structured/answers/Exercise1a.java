@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class Exercise1a extends AbstractTestBase {
 
     public void loginSuccess() {
-        new HomePage(getDriver()).get().searchFor("").getProductNames();
+        new HomePage(getDriver()).open().searchFor("").getProductNames();
 
         /*
         Assertions.assertThat(accountPage.getWelcomeMessage())
@@ -24,7 +24,7 @@ public class Exercise1a extends AbstractTestBase {
 
     public void loginAccountDoesNotExist() {
         final AuthenticationPage authenticationPage = new HomePage(getDriver()) //
-                .get() //
+                .open() //
                 .clickOnLogin();
         authenticationPage.loginWith("1234@test.com", "1qazxsw2");
 

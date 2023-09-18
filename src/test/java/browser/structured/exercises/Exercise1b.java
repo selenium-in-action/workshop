@@ -3,7 +3,6 @@ package browser.structured.exercises;
 import exercises.pages.HomePage;
 import exercises.pages.MyAccountPage;
 import exercises.types.Title;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,11 +22,6 @@ public class Exercise1b {
 
 	protected WebDriver driver;
 
-	@BeforeSuite
-	public void setupDriverManager() {
-		WebDriverManager.chromedriver().setup();
-	}
-
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		// Create a new instance of the Chrome driver
@@ -42,7 +36,7 @@ public class Exercise1b {
 
 	public void registerNewAccount() {
 		final String rand = Integer.toString(new Random().nextInt());
-		final MyAccountPage accountPage = new HomePage(driver).get() //
+		final MyAccountPage accountPage = new HomePage(driver).open() //
 				.clickOnLogin() //
 				.createNewAccount(rand + "tetser@test.com") //
 				.setTitle(Title.MR) //

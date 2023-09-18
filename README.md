@@ -1,14 +1,13 @@
 # Selecteren van testcases
 
-Testclasses moeten standaard eindigen op `Test`, anders moet je specifiek aangeven (in pom.xml) welke test je wilt uitvoeren. 
+Testclasses should end with `Test`, otherwise you need to define (in pom.xml) which test you like to execute. 
 ````
 <includes>
     <include>/browser/structured/answers/**</include>
 </includes>
-````                  
-van de maven-surefire-plugin
+````
 
-# Uitvoeren via maven
+# Execute via maven
 ## In Chrome
 `mvn clean test -DseleniumGrid=false -DseleniumBrowser=chrome`
 
@@ -21,12 +20,12 @@ van de maven-surefire-plugin
 ## Via Grid in Firefox
 `mvn clean test -DseleniumGrid=true -DseleniumBrowser=firefox`
 
-## Via specifiek Grid in Chrome
+## Via specific Grid in Chrome
 `mvn clean test -DseleniumGrid=true -DseleniumBrowser=chrome -DseleniumGridUrl=http://localhost:4444/wd/hub`
 
-## Via specifiek Grid in Firefox
+## Via specific Grid in Firefox
 `mvn clean test -DseleniumGrid=true -DseleniumBrowser=firefox -DseleniumGridUrl=http://localhost:4444/wd/hub`
 
 
-# Genereren rapport
+# Generate report
 `mvn allure:report`

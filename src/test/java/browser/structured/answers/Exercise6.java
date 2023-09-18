@@ -21,7 +21,7 @@ public class Exercise6 extends AbstractTestBase {
 		account.setPassword("1qazxsw2");
 
 		final MyAccountPage accountPage = new HomePage(getDriver()) //
-				.get() //
+				.open() //
 				.clickOnLogin() //
 				.loginWith(account.getEmail(), account.getPassword());
 
@@ -33,7 +33,7 @@ public class Exercise6 extends AbstractTestBase {
 		final Account account = new Account("1234@test.com", "1qazxsw2");
 
 		final AuthenticationPage authenticationPage = new HomePage(this.getDriver()) //
-				.get() //
+				.open() //
 				.clickOnLogin();
 		authenticationPage.loginWith(account.getEmail(), account.getPassword());
 

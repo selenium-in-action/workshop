@@ -16,7 +16,7 @@ public class Exercise1b extends AbstractTestBase {
 
     public void registerNewAccount() {
         final String rand = Integer.toString(new Random().nextInt());
-        final MyAccountPage accountPage = new HomePage(getDriver()).get() //
+        final MyAccountPage accountPage = new HomePage(getDriver()).open() //
                 .clickOnLogin() //
                 .createNewAccount(rand + "tester@test.com") //
                 .setTitle(Title.MR) //

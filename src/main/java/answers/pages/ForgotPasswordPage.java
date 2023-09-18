@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ForgotPasswordPage extends AbstractPage<ForgotPasswordPage> {
+public class ForgotPasswordPage extends AbstractPage {
 
 	@FindBy(css = "#email")
 	private WebElement emailField;
@@ -21,17 +21,6 @@ public class ForgotPasswordPage extends AbstractPage<ForgotPasswordPage> {
 
 	public ForgotPasswordPage(final WebDriver driver) {
 		super(driver);
-	}
-
-	@Override
-	protected void load() {
-		driver.get("http://demo.seleniuminaction.com/index.php?controller=password");
-	}
-
-	@Override
-	protected void isLoaded() throws Error {
-		// verify if the correct page is open
-		Assertions.assertThat(driver.getTitle()).startsWith("Forgot your password");
 	}
 
 	public ForgotPasswordPage requestNewPassword(final String email) {

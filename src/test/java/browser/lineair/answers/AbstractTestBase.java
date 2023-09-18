@@ -1,6 +1,5 @@
 package browser.lineair.answers;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -13,12 +12,6 @@ public abstract class AbstractTestBase {
 
     public WebDriver getDriver(){
         return driver;
-    }
-
-    @BeforeSuite
-    public void setupDriverManager() {
-        WebDriverManager.firefoxdriver().setup();
-//		OperaDriverManager.getInstance().version("2.27").forceDownload().setup();
     }
 
     @BeforeMethod(alwaysRun = true)

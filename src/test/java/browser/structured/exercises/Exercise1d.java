@@ -1,6 +1,5 @@
 package browser.structured.exercises;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,11 +16,6 @@ import org.testng.annotations.Test;
 public class Exercise1d {
 
 	protected WebDriver driver;
-
-	@BeforeSuite
-	public void setupDriverManager() {
-		WebDriverManager.chromedriver().setup();
-	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {

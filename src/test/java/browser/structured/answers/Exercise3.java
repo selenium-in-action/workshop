@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class Exercise3 extends AbstractTestBase {
 
 	public void navigateToContactPage_contactPageShown() {
-		final ContactPage contactPage = new HomePage(getDriver()).get() //
+		final ContactPage contactPage = new HomePage(getDriver()).open() //
 				.navigateToContactPage();
 		Assertions.assertThat(contactPage.getPageTitle()).isEqualTo("CUSTOMER SERVICE - CONTACT US");
 	}

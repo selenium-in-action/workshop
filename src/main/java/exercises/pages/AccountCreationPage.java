@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class AccountCreationPage extends AbstractPage {
 
 	@FindBy(css = "input#id_gender1")
@@ -45,20 +47,8 @@ public class AccountCreationPage extends AbstractPage {
 		super(driver);
 	}
 
-	@Override
-	protected void load() {
-		driver.get("http://demo.seleniuminaction.com/login#account-creation");
-	}
-
-	@Override
-	protected void isLoaded() throws Error {
-		// verify if the correct page is open
-		final String title = driver.getTitle();
-		Assertions.assertThat(title).startsWith("Login");
-	}
-
 	public AccountCreationPage setTitle(Title mr) {
-		final WebDriverWait wait = new WebDriverWait(driver, 3);
+		final WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		wait.until(ExpectedConditions.visibilityOf(maleRadio));
 
 		if (mr.equals(Title.MR)) {

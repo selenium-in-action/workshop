@@ -6,6 +6,6 @@ import org.testng.annotations.Test;
 public class RegisterTest extends AbstractTestBase {
 
     public void registerNewAccount() {
-        driver.get("http://demo.seleniuminaction.com");
+        driver.get("https://practicesoftwaretesting.com");
     }
 }

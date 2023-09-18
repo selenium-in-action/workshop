@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class Exercise2 extends AbstractTestBase {
 
     public void submitSearch_shouldDisplayResult() {
-        getDriver().get("http://demo.seleniuminaction.com/index.php");
+        getDriver().get("https://practicesoftwaretesting.com");
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         getDriver().findElement(By.name("search_query")).sendKeys("shirt");

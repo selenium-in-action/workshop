@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends AbstractPage<HomePage> {
+public class HomePage extends AbstractPage {
 
 	@FindBy(css = "a.login")
 	private WebElement loginLink;
@@ -27,16 +27,9 @@ public class HomePage extends AbstractPage<HomePage> {
 		super(driver);
 	}
 
-	@Override
-	protected void load() {
-		// Open the page
-		driver.get("http://demo.seleniuminaction.com/index.php");
-	}
-
-	@Override
-	protected void isLoaded() throws Error {
-		// verify if the correct page is open
-		Assertions.assertThat("My e-commerce").isEqualTo(driver.getTitle());
+	public HomePage open() {
+		driver.get("https://practicesoftwaretesting.com");
+		return this;
 	}
 
 	public AuthenticationPage clickOnLogin() {

@@ -2,7 +2,6 @@ package browser.structured.exercises;
 
 import exercises.pages.ContactPage;
 import exercises.types.ContactSubject;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,11 +18,6 @@ import org.testng.annotations.Test;
 public class Exercise7 {
 	protected WebDriver driver;
 
-	@BeforeSuite
-	public void setupDriverManager() {
-		WebDriverManager.chromedriver().setup();
-	}
-
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		// Create a new instance of the Chrome driver
@@ -38,14 +32,14 @@ public class Exercise7 {
 
 	public void completeContactForm_confirmationShown() {
 
-		final ContactPage contactPage = new ContactPage(driver).get() //
+		final ContactPage contactPage = new ContactPage(driver).open() //
 				.completeForm(ContactSubject.CUSTOMER_SERVICE, "email@test.com", "order4321", "The product arrived with damages.");
 
 		Assertions.assertThat(contactPage.getSuccessMessage()).isEqualTo("Your message has been successfully sent to our team.");
 	}
 
 	public void invalidEmailGiven_shouldShowErrorMessage() {
-		final ContactPage contactPage = new ContactPage(driver).get() //
+		final ContactPage contactPage = new ContactPage(driver).open() //
 				.completeForm(ContactSubject.CUSTOMER_SERVICE, "email", "order4321", "The product arrived with damages.");
 
 		Assertions.assertThat(contactPage.getErrorMessage()).isEqualTo("Invalid email address.");

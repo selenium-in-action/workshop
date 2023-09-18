@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class Exercise1a extends AbstractTestBase {
 
     public void loginSuccess() {
-        getDriver().get("http://demo.seleniuminaction.com");
+        getDriver().get("https://practicesoftwaretesting.com");
 
         getDriver().findElement(By.cssSelector(".login")).click();
 
@@ -26,7 +26,7 @@ public class Exercise1a extends AbstractTestBase {
 
     public void loginAccountDoesNotExist() {
 
-        getDriver().get("http://demo.seleniuminaction.com");
+        getDriver().get("https://practicesoftwaretesting.com");
 
         getDriver().findElement(By.cssSelector(".login")).click();
 

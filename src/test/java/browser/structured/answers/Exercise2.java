@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class Exercise2 extends AbstractTestBase {
 
 	public void submitSearch_shouldDisplayResult() {
-		new HomePage(getDriver()).get().searchFor("shirt");
+		new HomePage(getDriver()).open().searchFor("shirt");
 
 		Assertions.assertThat(new SearchResultsPage(getDriver()).getProductNames()).contains("Faded Short Sleeves T-shirt");
 	}

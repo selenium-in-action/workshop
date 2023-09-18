@@ -1,10 +1,7 @@
 package browser;
 
-import io.github.bonigarcia.wdm.config.DriverManagerType;
-import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import utils.listeners.TestListener;
@@ -22,12 +19,6 @@ public class BaseTest {
         return driver;
     }
 
-    @BeforeClass
-    public void setupClass() {
-
-        FirefoxDriverManager.getInstance(DriverManagerType.CHROME).setup();
-    }
-
     @BeforeMethod
     public void setup() throws MalformedURLException {
 //        DesiredCapabilities capability = DesiredCapabilities.chrome();
@@ -40,7 +31,6 @@ public class BaseTest {
 
     @AfterMethod
     public void teardown() {
-        //Close the browser
         driver.quit();
     }
 }
