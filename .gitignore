@@ -17,3 +17,5 @@ testng.out.xml
 .DS_Store
 answers/
 structured/
+/src/test/java/browser/lineair/answers/
+/src/test/java/browser/structured/
